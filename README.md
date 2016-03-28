@@ -1,2 +1,0 @@
-# myobj
-myobj
