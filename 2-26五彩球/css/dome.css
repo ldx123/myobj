@@ -1,0 +1,116 @@
+*{margin:0; padding:0;}
+body{background: #000000;}
+.warp,.x,.y,.z{
+    width:200px;
+    height:200px;
+    border-radius: 50%;
+}
+.warp{
+    margin:150px auto;
+    position: relative;
+}
+.x{
+    position: relative;
+    border: 1px solid blue;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-animation:playxiao 10s linear infinite;/*动画：名字 时间 状态 循环*/
+}
+@keyframes playxiao{
+    100%{
+        transform:rotateX(360deg) rotateY(360deg);
+    }
+}
+.x1{
+    width: 87.5%;
+    height: 87.5%;
+    border: 1px solid blue;
+    border-radius: 50%;
+    transform:translateZ(50px);
+    position: absolute;
+    top: 6.25%;
+    left: 6.25%;
+}
+.x2{
+    width: 87.5%;
+    height: 87.5%;
+    border: 1px solid blue;
+    border-radius: 50%;
+    transform: rotateX(180deg)  translateZ(50px);
+    position: absolute;
+    top: 6.25%;
+    left: 6.25%;
+}
+.xnIner{
+    width: 100%;
+    height: 1px;
+    background-color: yellow;
+    /*transform:;*/
+    position: absolute;
+    top: 50%;
+
+}
+.y{
+    border: 1px solid red;
+    transform:rotateY(90deg);
+}
+.y1{
+    width: 87.5%;
+    height: 87.5%;
+    border: 1px solid red;
+    border-radius: 50%;
+    transform: rotateY(90deg)  translateZ(50px);
+    position: absolute;
+    top: 6.25%;
+    left: 6.25%;
+}
+.y2{
+    width: 87.5%;
+    height: 87.5%;
+    border: 1px solid red;
+    border-radius: 50%;
+    transform: rotateY(90deg)  translateZ(-50px);
+    position: absolute;
+    top: 6.25%;
+    left: 6.25%;
+}
+.ynIner{
+    width: 1px;
+    height: 100%;
+    background-color: yellow;
+    position: absolute;
+    left: 50%;
+    transform:translateY(-200px);  
+}
+.z{
+    border: 1px solid green;
+    transform:rotateX(90deg) translateZ(200px);
+}
+.z1{
+    width: 87.5%;
+    height: 87.5%;
+    border: 1px solid green;
+    border-radius: 50%;
+    transform: rotateX(90deg)  translateZ(50px);
+    position: absolute;
+    top: 6.25%;
+    left: 6.25%;
+}
+.z2{
+    width: 87.5%;
+    height: 87.5%;
+    border: 1px solid green;
+    border-radius: 50%;
+    transform: rotateX(90deg)  translateZ(-50px);
+    position: absolute;
+    top: 6.25%;
+    left: 6.25%;
+}
+.znIner{
+    width: 100%;
+    height: 1px;
+    background-color: yellow;
+    position: absolute;
+    top: 50%;
+    transform: rotateY(90deg);  
+}

@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+     *{margin: 0;padding: 0;}
+        body{background-color: #c3ccd5;}
+        .inner{width: 800px;height: 400px;border:1px solid red;
+            margin:150px auto;
+        }
+        .tab{
+            width: 200px; height: 140px;float: left;margin-right: 100px;margin-bottom: 50px;
+        }
+        .tab:nth-child(3n){margin-right: 0;}
+        .item{
+            width: 200px;height: 140px;
+        }
+        .item img{
+            width: 190px;height: 130px; padding: 5px;background-color: #fff;
+        }
+        .item-1, .item-2,.item-3,.item-4,.item-5,.item-6{
+            position: relative;
+        }
+        .item-1 img, .item-2 img,.item-3 img,.item-4 img, .item-5 img,.item-6 img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation:all .5s linear;
+        }
+        .item-1:hover img:nth-child(1){transform:rotate(10deg);}
+        .item-1:hover img:nth-child(2){transform:rotate(-10deg);}
+        .item-1:hover img:nth-child(3){transform:rotate(20deg);}
+        .item-1:hover img:nth-child(4){transform:rotate(-20deg);}
+        .item-1:hover img:nth-child(5){transform:rotate(30deg);}
+        .item-1:hover img:nth-child(6){transform:rotate(-30deg);}
+        .item-1:hover img:nth-child(7){transform:scale(.9);}
+
+        .item-2:hover img:nth-child(1){transform:translate(-30%,-60%) rotate(-30deg);}
+        .item-2:hover img:nth-child(2){transform:translate(-20%,-40%) rotate(-20deg);}
+        .item-2:hover img:nth-child(3){transform:translate(-10%,-20%) rotate(-10deg);}
+        .item-2:hover img:nth-child(4){transform:scale(1.1); }
+
+        .item-3:hover img:nth-child(1){transform:translate(30%,60%) rotate(-30deg);}
+        .item-3:hover img:nth-child(2){transform:translate(20%,40%) rotate(-20deg);}
+        .item-3:hover img:nth-child(3){transform:translate(10%,20%) rotate(-10deg);}
+        .item-3:hover img:nth-child(4){transform:translate(30%,-60%) rotate(30deg);}
+        .item-3:hover img:nth-child(5){transform:translate(20%,-40%) rotate(20deg);}
+        .item-3:hover img:nth-child(6){transform:translate(10%,-20%) rotate(10deg);}
+        .item-3:hover img:nth-child(7){transform:scale(.9);}
+
+        .item-4:hover img:nth-child(1){transform:translate(20%,-60%) rotate(-60deg) scale(.2);}
+        .item-4:hover img:nth-child(2){transform:translate(30%,-40%) rotate(-40deg) scale(.4);}
+        .item-4:hover img:nth-child(3){transform:translate(40%,-20%) rotate(-20deg) scale(.6);}
+        .item-4:hover img:nth-child(4){transform:translate(-20%,-60%) rotate(60deg) scale(.2);}
+        .item-4:hover img:nth-child(5){transform:translate(-30%,-40%) rotate(40deg) scale(.4);}
+        .item-4:hover img:nth-child(6){transform:translate(-40%,-20%) rotate(20deg) scale(.6);}
+        .item-4:hover img:nth-child(7){transform:scale(1.1);}
+
+        .item-5:hover img:nth-child(1){transform:translate(0%,50%) rotate(-20deg);}
+        .item-5:hover img:nth-child(2){transform:translate(50%,0%) rotate(-20deg);}
+        .item-5:hover img:nth-child(3){transform:translate(0%,-50%) rotate(-20deg);}
+        .item-5:hover img:nth-child(4){transform:translate(-50%,0%) rotate(-20deg);}
+        .item-5:hover img:nth-child(5){transform:scale(1.1) rotate(-20deg);}
+         .item-6{
+            -webkit-perspective: 200;
+         }   
+        .item-6:hover img:nth-child(1){transform:translate(0%,75%) rotateX(10deg) scale(.7);}
+        .item-6:hover img:nth-child(2){transform:translate(72%,75%) rotateX(10deg) scale(.7);}
+        .item-6:hover img:nth-child(3){transform:translate(-72%,75%) rotateX(10deg) scale(.7);}
+        .item-6:hover img:nth-child(4){transform:translate(-72%,0%) rotateX(10deg) scale(.7);}
+        .item-6:hover img:nth-child(5){transform:translate(72%,0%) rotateX(10deg) scale(.7);}
+        .item-6:hover img:nth-child(6){transform:translate(72%,-70%) rotateX(10deg) scale(.7);}
+        .item-6:hover img:nth-child(7){transform:translate(-72%,-70%) rotateX(10deg) scale(.7);}
+        .item-6:hover img:nth-child(8){transform:translate(0%,-70%) rotateX(10deg) scale(.7);}
+        .item-6:hover img:nth-child(9){transform: rotateX(10deg) scale(.7);}
+    </style>
+</head>
+<body>
+  <div class="inner">
+      <div class="tab">
+          <div class="item item-1">
+              <img src="images/big1.jpg" alt="">
+              <img src="images/big2.jpg" alt="">
+              <img src="images/big3.jpg" alt="">
+              <img src="images/big4.jpg" alt="">
+              <img src="images/big5.jpg" alt="">
+              <img src="images/big6.jpg" alt="">
+              <img src="images/big7.jpg" alt="">
+          </div>
+      </div>
+      <div class="tab">
+          <div class="item item-2">
+              <img src="images/big4.jpg" alt="">
+              <img src="images/big5.jpg" alt="">
+              <img src="images/big7.jpg" alt="">
+              <img src="images/big6.jpg" alt="">
+          </div>
+      </div>
+      <div class="tab">
+          <div class="item item-3">
+              <img src="images/big1.jpg" alt="">
+              <img src="images/big2.jpg" alt="">
+              <img src="images/big3.jpg" alt="">
+              <img src="images/big6.jpg" alt="">
+              <img src="images/big4.jpg" alt="">
+              <img src="images/big7.jpg" alt="">
+              <img src="images/big5.jpg" alt="">
+          </div>
+      </div>
+       <div class="tab">
+          <div class="item item-4">
+              <img src="images/big2.jpg" alt="">
+              <img src="images/big3.jpg" alt="">
+              <img src="images/big5.jpg" alt="">
+              <img src="images/big6.jpg" alt="">
+              <img src="images/big7.jpg" alt="">
+              <img src="images/big4.jpg" alt="">
+              <img src="images/big1.jpg" alt="">
+          </div>
+      </div>
+       <div class="tab">
+          <div class="item item-5">
+              <img src="images/big2.jpg" alt="">
+              <img src="images/big4.jpg" alt="">
+              <img src="images/big7.jpg" alt="">
+              <img src="images/big5.jpg" alt="">
+              <img src="images/big3.jpg" alt="">
+          </div>
+      </div>
+       <div class="tab">
+          <div class="item item-6">
+              <img src="images/big1.jpg" alt="">
+              <img src="images/big6.jpg" alt="">
+              <img src="images/big4.jpg" alt="">
+              <img src="images/big4.jpg" alt="">
+              <img src="images/big7.jpg" alt="">
+              <img src="images/big7.jpg" alt="">
+              <img src="images/big5.jpg" alt="">
+              <img src="images/big5.jpg" alt="">
+              <img src="images/big2.jpg" alt="">
+          </div>
+      </div>
+  </div> 
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+  *{margin:0;padding:0;}
+  body{background-color:#e5e5e5;font-size:12px;color:red;}
+.phone_box{width:320px;height:614px;margin:20px auto;border:2px solid red;position: relative;}
+.p-top{width:320px;height:42px;background:#fff;}
+.p-info{width:320px;height:20px;background:#000;text-anl}
+.p-title{width:320px;height:40px;text-align:center;line-height:40px;background:#000;color:#fff;font-size:24px;border-left:1px solid #fff;border-right:1px solid #fff;}
+.p-con{width:320px;height:486px;background:#f5f5f5;position:relative;overflow: hidden;}
+.p-bottom{height:47px;background:red;}
+.p-btn{width:40px;height:40px;border:2px solid red;display:block;position:absolute;top:125px;right:20px;background:yellow;border-radius:50%;
+}
+@keyframes play{
+	form{transform:rotate(0deg);}
+	to{transform:rotate(360deg);}
+}
+.plays{
+	animation:play 1.2s linear infinite;
+}
+.lrcLine{color: green;line-height: 34px;}
+.sel{color: red;}
+#lrc{display: none;}
+  </style>
+ </head>
+ <body>
+  <div class="phone_box">
+  	<div class="p-top"></div>
+  	<div class="p-info">10:00</div>
+  	<div class="p-title">好想你</div>
+  	<div class="p-con"></div>
+  	<div class="p-bottom"></div>
+    <a href="#" class="p-btn">play</a>
+	<textarea id="lrc" class="lrcLine" >
+    [ti:雪]
+[ar:杜雯媞]
+[al:《孤独的乐章》(2010)]
+[01:31.91][00:00.00]－＝ 杜雯媞 《 雪 》（ft. 王艺翔）＝－
+[01:35.16][00:03.94]
+[00:06.07]词：king 曲：杜雯媞
+[00:11.61]
+[03:36.82][01:37.00][00:13.48]……杭州 o1o 棒儿……
+[00:19.95]
+[00:21.22](女)这季节风多了一些　　
+[00:25.55]吹痛被爱遗忘的一切
+[00:30.13]而我却躲不过这感觉 　
+[00:34.37]痛的无力去改变
+[00:38.71]谁了解在我的世界　　
+[00:43.05]爱的信仰已被风熄灭
+[00:47.28]就象离开树的落叶飘不见　　
+[00:51.81]已经慢慢凋谢
+[00:55.66]忽然下的一场雪飘的那么纯洁　　
+[01:00.40]将我埋葬在你的世界
+[01:05.41]冰封了我爱的期限　　　
+[01:09.23]却让痛成为永远
+[01:12.95]在一瞬间曾经所有的梦都幻灭
+[01:17.89]剩下回忆湿了我的眼
+[01:23.20]还牵着你给过我的誓言
+[01:27.15]发现已经无法兑现
+[01:40.68][01:30.40]
+[01:42.06](男)一整夜 爱与恨重叠
+[01:46.09]只剩心被撕裂的感觉
+[01:50.60]属于我的幸福被你忽略
+[01:55.08]我不愿 无法妥协
+[01:58.91]忽然下的一场雪飘的那么纯洁　　
+[02:03.78]将我埋葬在你的世界
+[02:08.84]冰封了我爱的期限
+[02:12.47]却让痛成为永远
+[02:16.34]在一瞬间曾经所有的梦都幻灭 
+[02:21.23]剩下回忆湿了我的眼
+[02:26.30]还牵着你给过我的誓言
+[02:30.45]发现已经无法兑现
+[02:33.95]
+[02:35.15]忧伤陪伴在我身边
+[02:39.23]任时间将我的记忆更迭
+[02:43.75]却无法忘掉 你那冰冷的眼
+[02:50.44]
+[02:52.45](合)一场雪飘的那么纯洁　
+[02:56.15]将我埋葬在你的世界
+[03:01.25]陷入你善变的谎言 
+[03:04.88]我的爱 已被搁浅 
+[03:08.65]在一瞬间曾经所有的梦都幻灭
+[03:13.39]剩下回忆湿了我的眼
+[03:18.51](男)就连呼吸仿佛都被冻结
+[03:22.75]在这个寂寞的深夜
+[03:27.28](合)心随着雪飘远
+[03:35.26]
+	</textarea>
+  </div>
+ <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script>
+	//alert("ok");
+	var audioDom=document.createElement("audio");
+		  audioDom.src="雪.mp3";
+		
+    // audioDom.play();
+  var lrc=$("#lrc").val();
+  var html="";//
+  var lrcArry=lrc.split("[");
+  for(var i=0;i<lrcArry.length;i++){
+    // 歌词第二次分割
+    var arr=lrcArry[i].split("]");
+    // 获取分割之后的歌词
+    var lrcMsg=arr[1];
+    // 获取分割之后的时间
+    var time=arr[0].split(".");
+    // 获取时间分和秒
+    var stime=time[0].split(":");
+    // 把时间转换秒数
+    var ms=stime[0]*60+stime[1]*1;
+    if(lrcMsg){
+      html +="<div class='lrcLine' id='"+ms+"'>"+lrcMsg+"</div>";
+    }
+  }
+  $(".p-con").html(html);
+  audioDom.addEventListener("timeupdate",function(){
+    // 获取当前播放时间
+    var timer=this.currentTime;
+    var s=parseInt(timer);
+    var m=parseInt(timer / 60);
+    for(var i=0;i<s;i++){
+      $("#"+i).addClass("sel").siblings().removeClass("sel");
+    }
+    var st=m * 60 + s;
+    $(".p-con").scrollTop(st*3);
+  })
+  $(".p-btn").click(function(){
+    if(audioDom.paused){
+      audioDom.play();
+    }else{
+      audioDom.pause();
+    }
+    $(this).toggleClass("plays");
+  });
+  </script>
+ </body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        *{margin: 0;padding: 0;}
+        ul,li{list-style: none;}
+        .box{position:relative; margin:20px auto; width:231px; height:411px; overflow:hidden; border:2px solid red;}
+        .box img { display:block; width:100%;}
+        .fade li { position:absolute; top:0; left:0; opacity:0;}
+        .fade li:nth-child(1) {animation:fade 12s linear 0s infinite;}
+        .fade li:nth-child(2) {animation:fade 12s linear 2s infinite;}
+        .fade li:nth-child(3) {animation:fade 12s linear 4s infinite;}
+        .fade li:nth-child(4) {animation:fade 12s linear 6s infinite;}
+        .fade li:nth-child(5) {animation:fade 12s linear 8s infinite;}
+        .fade li:nth-child(6) {animation:fade 12s linear 10s infinite;}
+        @keyframes fade {
+                5%,25% { opacity:1;}
+                28% { opacity:0;}
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul class="fade">
+            <li><img src="img/banner1.png" alt=""></li>
+            <li><img src="img/banner2.png" alt=""></li>
+            <li><img src="img/banner3.png" alt=""></li>
+            <li><img src="img/banner4.png" alt=""></li>
+            <li><img src="img/banner5.png" alt=""></li>
+            <li><img src="img/banner6.png" alt=""></li>
+        </ul>
+    </div>
+</body>
+</html>

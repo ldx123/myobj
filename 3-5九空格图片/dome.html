@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+  *{margin:0;padding:0;}
+  body{background:url("images/bg.jpg")no-repeat; background-size: cover;}
+    .list{width:906px;height:486px;border:1px solid #fff;margin:50px auto 0;}
+	.list ul li{list-style:none;width:300px;height:160px;border:1px solid #fff;position:relative;float:left;}
+	.list ul li a{width:100%;height:100%;background:rgba(0,0,0,.4); color:#fff;position:absolute;top:0;left:0;font-size:20px;line-height:160px;text-align:center;text-decoration:none;font-family:"微软雅黑";letter-spacing:1.5px;opacity:0;}
+	.list ul li img{position:absolute;top:0;left:0;opacity:0;transition:all 0.5s linear;}
+	.list ul li img.default{opacity:1;}
+	.list ul li:hover img.right{left:302px;opacity:1;z-index:999;}
+	.list ul li:hover img.bottom{top:162px;opacity:1;z-index:999;}
+	.list ul li:hover img.left{left:-302px;opacity:1;z-index:999;}
+	.list ul li:hover img.top{top:-162px;opacity:1;z-index:999;}
+  </style>
+ </head>
+ <body>
+  <div class="list">
+	<ul>
+		<li><img src="images/img1.png" class="default">
+			<a href="#">我的练习</a>
+			
+			<img src="images/jr.jpg" class="right">
+			<img src="images/syb.jpg" class="bottom">
+		</li>
+		<li><img src="images/img2.png" class="default">
+			<a href="#">我的练习</a>
+			<img src="images/snt.jpg" class="left">
+			<img src="images/jr.jpg" class="right">
+			<img src="images/syb.jpg" class="bottom">
+		</li>
+		<li><img src="images/img3.png" class="default">
+			<a href="#">我的练习</a>
+			<img src="images/snt.jpg" class="left">
+			<img src="images/syb.jpg" class="bottom">
+		</li>
+		<li><img src="images/img4.png" class="default">
+			<a href="#">我的练习</a>
+			<img src="images/snt.jpg" class="top">
+			<img src="images/jr.jpg" class="right">
+			<img src="images/syb.jpg" class="bottom">
+		</li>
+		<li><img src="images/img5.png" class="default">
+			<a href="#">我的练习</a>
+			<img src="images/snt.jpg" class="top">
+			<img src="images/jr.jpg" class="right">
+			<img src="images/syb.jpg" class="left">
+			<img src="images/syb.jpg" class="bottom">
+		</li>
+		<li><img src="images/img6.png" class="default">
+			<a href="#">我的练习</a>
+			<img src="images/snt.jpg" class="top">
+			<img src="images/jr.jpg" class="left">
+			<img src="images/syb.jpg" class="bottom">
+		</li>
+		<li><img src="images/img7.png" class="default">
+			<a href="#">我的练习</a>
+			<img src="images/snt.jpg" class="top">
+			<img src="images/jr.jpg" class="right">
+		</li>
+		<li><img src="images/img8.png" class="default">
+			<a href="#">我的练习</a>
+			<img src="images/snt.jpg" class="top">
+			<img src="images/jr.jpg" class="right">
+			<img src="images/syb.jpg" class="left">
+		</li>
+		<li><img src="images/img9.png" class="default">
+			<a href="#">我的练习</a>
+			<img src="images/snt.jpg" class="top">
+			<img src="images/jr.jpg" class="left">
+		</li>
+	</ul>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+  <link href="http://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+  <title>Document</title>
+  <style>
+    ul,li{margin:0;padding:0;}
+    ul li{list-style:none;}
+    .dash{width:8px;height:8px;border-radius:50%;background:#36c6d3;display:inline-block;margin-right:5px;}
+    .page-header{margin:0;padding:0;}
+    .top-nav{font-size:16px;}
+    .top-nav i{font-size:19px;color:#C1CCD1;}
+    .top-nav ul li{list-style:none;display:inline-block;}
+    .top-nav ul li a{padding: 17px 6px 8px 6px;}
+    .page-header-top{padding-bottom:10px;}
+    .form-control{height:33px!important;}
+    .page-content{background:#eff3f8;}
+    .menu-toggler:hover,.menu-toggler:focus{text-decoration: none;}
+     .carousel-inner > .item > img, .carousel-inner > .item > a > img{width: 100%; height: 274px;}
+     .carousel-caption{text-align: left; padding: 0;bottom: 10px;left: 5%;}
+     .carousel-indicators{text-align: right; bottom: 0px;left: 60%;}
+    .items{background:#fff;padding:25px 20px 15px;}
+    .page-content li{line-height:23px;}
+    .con-title .nav-tabs{border:0;}
+    .con-title .nav-tabs a{color:#666;margin: 0;padding: 12px 13px 13px;    font-size: 13px;}
+    .con-title .nav-tabs a:hover{color:#333;}
+    .con-tt a{color:#32c5d2!important;font-size:16px;font-weight:700;line-height:40px;}
+    .page-user{background:#fff;padding: 10px 10px 10px 20px;overflow: hidden; }
+    .page-user li{float: left;margin: 0px 3px;}
+    .page-footer{background:#444d58;padding: 30px 0;color: #a2abb7;}
+    .page-footer h2{color: #32c5d2;font-size: 15px;font-weight: 700;margin:0 0 12px;}
+    .page-footer a{color: #32c5d2;}
+    .scroll-to-top a{font-size:30px; padding:2px;text-align:center;position:fixed;z-index:10001;bottom:5px;right:20px; color:#657383;}
+    @media (max-width: 767px){ 
+        .navbar-inverse{background-color: #fff;}
+
+        .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {border-color: #fff; }
+
+        .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus{background:#3CD5BF!important;}
+
+        .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {color: #666;background-color: transparent;}
+
+        .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus,.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {color: #3CD5BF;background-color: transparent;}
+
+        .navbar-toggle {background-color:#080808;}
+        .input-group-btn{background:#3CD5BF!important;}
+        .btn-default,.btn-default:hover,.btn:hover,.btn-default:focus,.btn:focus {
+             color: #fff; 
+             background-color: #3CD5BF!important; 
+            border-color: #3CD5BF!important;
+        }
+     }
+  </style>
+ </head>
+ <body>
+
+ <!--begin header -->
+     <div class="page-header">
+        <div class="page-header-top">
+            <div class="container">
+                <div class="row" style="margin-top:5px;">
+                    <div class="col-md-12 text-right">
+                        <small><a href="#">订阅</a> |</small>
+                        <small><a href="#">设为首页</a> |</small>
+                        <small><a href="#">加入收藏</a> |</small>
+                        <small><a href="#">放在桌面</a> |</small>
+                        <small><a href="#">全站搜索</a></small>
+                    </div>
+                </div>
+                <div class="page-logo" style="float:left;"><img src="img/logo2.jpg"></div>
+                <div class="top-nav" style="float:right;margin: 13px 0 0;padding: 0;">
+                    <ul class="nav pull-right">
+                        <li><a  href="#"><i class="fa fa-qq"></i> QQ登录</a></li>
+                        <li><a  href="#"><i class="fa fa-user"></i> 免费注册</a></li>
+                        <li><a  href="#"><i class="fa fa-user-md"></i> 账号登录</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="nav  navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <form class="navbar-form navbar-right" role="search">
+                         <div class="input-group">
+                          <input type="text" class="form-control" placeholder="输入搜索关键字">
+                          <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+                          </span>
+                        </div>
+                    </form>
+                    <ul class="nav navbar-nav ">
+                        <li class="active"><a href="#">首页</a></li>
+                        <li class="dropdown">
+                            <a href="#"class="dropdown-toggle" data-toggle="dropdown">文章故事<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">经典美文</a><li>
+                                <li><a href="#">人生哲理</a><li>
+                                <li><a href="#">伤感文章</a><li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">散文精选<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">抒情散文</a><li>
+                                <li><a href="#">爱情散文</a><li>
+                                <li><a href="#">短篇散文</a><li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">诗歌荟萃<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">现代诗歌</a></li>
+                                <li><a href="#">散文诗歌</a></li>
+                                <li><a href="#">感谢诗歌</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">短篇小说</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+     </div>
+<!--end header -->
+<!--begin content-->
+    <div class="page-content">
+        <div class="container">
+            <div class="page-content-inner">
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col-md-4">
+                       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                            </ol>
+                            <ul class="carousel-inner" role="listbox">
+                                <li class="item active">
+                                  <a href="#"><img src="img/ban.jpg" alt="..."></a>
+                                  <div class="carousel-caption">月光很美</div>
+                                </li>
+                                <li class="item">
+                                  <a href="#"><img src="img/ban.jpg" alt="..."></a>
+                                  <div class="carousel-caption">我更美</div>
+                                </li>
+                                <li class="item">
+                                  <a href="#"><img src="img/ban.jpg" alt="..."></a>
+                                  <div class="carousel-caption">你也很美</div>
+                                </li>
+                            </ul>
+                            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                     <div class="items">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul>
+                                    <li><span class="dash"></span><a href="#">无悔人生</a></li>
+                                    <li><span class="dash"></span><a href="#">那些年错过的风景</a></li>
+                                    <li><span class="dash"></span><a href="#">无悔人生</a></li>
+                                    <li><span class="dash"></span><a href="#">那些年错过的风景</a></li>
+                                    <li><span class="dash"></span><a href="#">无悔人生</a></li>
+                                    <li><span class="dash"></span><a href="#">那些年错过的风景</a></li>
+                                    <li><span class="dash"></span><a href="#">无悔人生</a></li>
+                                    <li><span class="dash"></span><a href="#">那些年错过的风景</a></li>
+                                    <li><span class="dash"></span><a href="#">无悔人生</a></li>
+                                    <li><span class="dash"></span><a href="#">那些年错过的风景</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul>
+                                    <li><span class="dash"></span><a href="#">无悔人生</a></li>
+                                    <li><span class="dash"></span><a href="#">那些年错过的风景</a></li>
+                                    <li><span class="dash"></span><a href="#">无悔人生</a></li>
+                                    <li><span class="dash"></span><a href="#">那些年错过的风景</a></li>
+                                    <li><span class="dash"></span><a href="#">无悔人生</a></li>
+                                    <li><span class="dash"></span><a href="#">那些年错过的风景</a></li>
+                                    <li><span class="dash"></span><a href="#">无悔人生</a></li>
+                                    <li><span class="dash"></span><a href="#">那些年错过的风景</a></li>
+                                    <li><span class="dash"></span><a href="#">无悔人生</a></li>
+                                    <li><span class="dash"></span><a href="#">那些年错过的风景</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                     </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:20px;">
+                    <div class="col-lg-12" >
+                        <div style="background:#fff;padding: 12px 20px 15px;">
+                            <div class="con-title" style="overflow:hidden;line-height:18px;border-bottom: 1px solid #ddd;">
+                                <div class="con-tt" style="float:left;"><a href="#">文章故事</a></div>
+                                <ul class="nav nav-tabs" style="float:right;display: inline-block;">
+                                    <li><a href="#">人生哲理</a></li>
+                                    <li><a href="#">经典美文</a></li>
+                                    <li><a href="#">伤感文章</a></li>
+                                    <li><a href="#">爱情文章</a></li>
+                                    <li><a href="#">感人文章</a></li>
+                                    <li><a href="#">励志文章</a></li>
+                                </ul>
+                            </div>
+                            <div class="con-body" style="padding-top:8px;">
+                                <div class="row">
+                                    <div class="col-lg-7">
+                                        <div class="row">
+                                            <div class="col-md-12" style="overflow:hidden;" >
+                                                <a href="#" class="pull-left" style="padding-right:10px;"><img src="img/tit1.jpg"></a>
+                                                <div style="display:table-cell;vertical-align: top;">
+                                                    <h5><a href="#">月光很暖，思念很长</a></h5>
+                                                    <p > 月光很暖，思念很长　　文/『筱』逸晨枫　　一个人静静地走在夜里，清风明月相伴。一袭清辉，摇曳下满树的黑影，席卷了所有的思...</p>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin-top:10px;">
+                                            <div class="col-md-6">
+                                                <ul>
+                                                    <li><span class="dash"></span><a href="#">奇妙的春天</a></li>
+                                                    <li><span class="dash"></span><a href="#">谁最有用</a></li>
+                                                    <li><span class="dash"></span><a href="#">一座城一个人</a></li>
+                                                    <li><span class="dash"></span><a href="#">那抹阳光</a></li>
+                                                    <li><span class="dash"></span><a href="#">无悔人生</a></li>
+                                                    <li><span class="dash"></span><a href="#">那些年错过的风景</a></li>
+                                                    <li><span class="dash"></span><a href="#">给她的情书</a></li>
+                                                    <li><span class="dash"></span><a href="#">我想对你说</a></li>
+                                                    <li><span class="dash"></span><a href="#">原来你一直在期待</a></li>
+                                                    <li><span class="dash"></span><a href="#">那些年错过的风景</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <ul>
+                                                    <li><span class="dash"></span><a href="#">奇妙的春天</a></li>
+                                                    <li><span class="dash"></span><a href="#">谁最有用</a></li>
+                                                    <li><span class="dash"></span><a href="#">一座城一个人</a></li>
+                                                    <li><span class="dash"></span><a href="#">那抹阳光</a></li>
+                                                    <li><span class="dash"></span><a href="#">无悔人生</a></li>
+                                                    <li><span class="dash"></span><a href="#">那些年错过的风景</a></li>
+                                                    <li><span class="dash"></span><a href="#">给她的情书</a></li>
+                                                    <li><span class="dash"></span><a href="#">我想对你说</a></li>
+                                                    <li><span class="dash"></span><a href="#">原来你一直在期待</a></li>
+                                                    <li><span class="dash"></span><a href="#">那些年错过的风景</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="col-sm-4" style="float:left;">
+                                            <a href="#"><img src="img/hot1.jpg"></a>
+                                            <h5><a href="#">月光很暖，思念...</a></h5>
+                                        </div>
+                                        <div class="col-sm-4" style="float:left;">
+                                            <a href="#"><img src="img/hot2.jpg"></a>
+                                            <h5><a href="#">倘若,时光已老...</a></h5>
+                                        </div>
+                                        <div class="col-sm-4" style="float:left;">
+                                            <a href="#"><img src="img/hot3.jpg"></a>
+                                            <h5><a href="#">听,是谁在唱歌...</a></h5>
+                                        </div>
+                                        <div class="col-sm-4" style="float:left;">
+                                            <a href="#"><img src="img/hot4.jpg"></a>
+                                            <h5><a href="#">我的故事,路过...</a></h5>
+                                        </div>
+                                        <div class="col-sm-4" style="float:left;">
+                                            <a href="#"><img src="img/hot5.jpg"></a>
+                                            <h5><a href="#">梦想,在路上...</a></h5>
+                                        </div>
+                                        <div class="col-sm-4" style="float:left;">
+                                            <a href="#"><img src="img/hot6.jpg"></a>
+                                            <h5><a href="#">信.</a></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:20px;">
+                    <div class="col-lg-12" >
+                        <div style="background:#fff;padding: 12px 20px 15px;">
+                            <div class="con-title" style="overflow:hidden;line-height:18px;border-bottom: 1px solid #ddd;">
+                                <div class="con-tt" style="float:left;"><a href="#">散文精选</a></div>
+                                <ul class="nav nav-tabs" style="float:right;display: inline-block;">
+                                    <li><a href="#">抒情散文</a></li>
+                                    <li><a href="#">爱情散文</a></li>
+                                    <li><a href="#">伤感散文</a></li>
+                                    <li><a href="#">叙事散文</a></li>
+                                    <li><a href="#">网络日志</a></li>
+                                    <li><a href="#">游记散文</a></li>
+                                </ul>
+                            </div>
+                            <div class="con-body" style="padding-top:8px;">
+                                <div class="row">
+                                    <div class="col-lg-7">
+                                        <div class="row">
+                                            <div class="col-md-12" style="overflow:hidden;" >
+                                                <a href="#" class="pull-left" style="padding-right:10px;"><img src="img/tit2.jpg"></a>
+                                                <div style="display:table-cell;vertical-align: top;">
+                                                    <h5><a href="#">我的故事，路过</a></h5>
+                                                    <p >谁家小院撩起了炊烟,和风打着转,倾诉着满心的思念。一缕缕粽香萦绕着小楼,开启了尘封的故事;一首首曲子抨击着心脏，在这个时...</p>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin-top:10px;">
+                                            <div class="col-md-6">
+                                                <ul>
+                                                    <li><span class="dash"></span><a href="#">静待，生命开花</a></li>
+                                                    <li><span class="dash"></span><a href="#">闲寂</a></li>
+                                                    <li><span class="dash"></span><a href="#">一座城一个人</a></li>
+                                                    <li><span class="dash"></span><a href="#">那树那花那校园</a></li>
+                                                    <li><span class="dash"></span><a href="#">如果爱我，不要走开</a></li>
+                                                    <li><span class="dash"></span><a href="#">时光欠你的告白</a></li>
+                                                    <li><span class="dash"></span><a href="#">清浅时光，然就一树芳华</a></li>
+                                                    <li><span class="dash"></span><a href="#">冬日</a></li>
+                                                    <li><span class="dash"></span><a href="#">原来你一直在期待</a></li>
+                                                    <li><span class="dash"></span><a href="#">一枕月光，梦里凉薄</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <ul>
+                                                    <li><span class="dash"></span><a href="#">冬雪</a></li>
+                                                    <li><span class="dash"></span><a href="#">时光絮语</a></li>
+                                                    <li><span class="dash"></span><a href="#">许我一片流星雨</a></li>
+                                                    <li><span class="dash"></span><a href="#">一朵花不知她的寂寞</a></li>
+                                                    <li><span class="dash"></span><a href="#">花火</a></li>
+                                                    <li><span class="dash"></span><a href="#">后来我们都哭了</a></li>
+                                                    <li><span class="dash"></span><a href="#">时光剪影</a></li>
+                                                    <li><span class="dash"></span><a href="#">琉璃生光</a></li>
+                                                    <li><span class="dash"></span><a href="#">面朝大海，春暖花开</a></li>
+                                                    <li><span class="dash"></span><a href="#">你，惊艳了我的天空</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="col-sm-4" style="float:left;">
+                                            <a href="#"><img src="img/hot7.jpg"></a>
+                                            <h5><a href="#">时光的车轮...</a></h5>
+                                        </div>
+                                        <div class="col-sm-4" style="float:left;">
+                                            <a href="#"><img src="img/hot8.jpg"></a>
+                                            <h5><a href="#">素窗</a></h5>
+                                        </div>
+                                        <div class="col-sm-4" style="float:left;">
+                                            <a href="#"><img src="img/hot9.jpg"></a>
+                                            <h5><a href="#">当爱情归于平淡...</a></h5>
+                                        </div>
+                                        <div class="col-sm-4" style="float:left;">
+                                            <a href="#"><img src="img/hot10.jpg"></a>
+                                            <h5><a href="#">一枕月光，梦里...</a></h5>
+                                        </div>
+                                        <div class="col-sm-4" style="float:left;">
+                                            <a href="#"><img src="img/hot11.jpg"></a>
+                                            <h5><a href="#">梦想,在路上...</a></h5>
+                                        </div>
+                                        <div class="col-sm-4" style="float:left;">
+                                            <a href="#"><img src="img/hot12.jpg"></a>
+                                            <h5><a href="#">信.</a></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:20px;">
+                    <div class="col-lg-12" >
+                        <div style="background:#fff;padding: 12px 20px 15px;">
+                            <div class="con-title" style="overflow:hidden;line-height:18px;border-bottom: 1px solid #ddd;">
+                                <div class="con-tt" style="float:left;"><a href="#">短篇小说</a></div>
+                                <ul class="nav nav-tabs" style="float:right;display: inline-block;">
+                                    <li><a href="#">青春校园</a></li>
+                                    <li><a href="#">都市言情</a></li>
+                                    <li><a href="#">仙侠玄幻</a></li>
+                                    <li><a href="#">故事新篇</a></li>
+                                    <li><a href="#">古代言情</a></li>
+                                </ul>
+                            </div>
+                            <div class="con-body" style="padding-top:8px;">
+                                <div class="row">
+                                    <div class="col-lg-7">
+                                        <div class="row" style="margin-top:10px;">
+                                            <div class="col-md-6">
+                                                <ul>
+                                                    <li><span class="dash"></span><a href="#">那些年错失的风景</a></li>
+                                                    <li><span class="dash"></span><a href="#">闲寂</a></li>
+                                                    <li><span class="dash"></span><a href="#">一座城一个人</a></li>
+                                                    <li><span class="dash"></span><a href="#">尘埃落定</a></li>
+                                                    <li><span class="dash"></span><a href="#">最初的夕暮</a></li>
+                                                    <li><span class="dash"></span><a href="#">时光欠你的告白</a></li>
+                                                    <li><span class="dash"></span><a href="#">清浅时光，然就一树芳华</a></li>
+                                                    <li><span class="dash"></span><a href="#">夜里繁星</a></li>
+                                                    <li><span class="dash"></span><a href="#">不过惊鸿一眼，我竟爱你六年...</a></li>
+                                                    <li><span class="dash"></span><a href="#">记得你是女子</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <ul>
+                                                    <li><span class="dash"></span><a href="#">爱一程，伤一程</a></li>
+                                                    <li><span class="dash"></span><a href="#">知道吗，我在乎</a></li>
+                                                    <li><span class="dash"></span><a href="#">月中孤独冷</a></li>
+                                                    <li><span class="dash"></span><a href="#">遇见</a></li>
+                                                    <li><span class="dash"></span><a href="#">自问</a></li>
+                                                    <li><span class="dash"></span><a href="#">后来我们都哭了</a></li>
+                                                    <li><span class="dash"></span><a href="#">他予盛宠</a></li>
+                                                    <li><span class="dash"></span><a href="#">我们青梅竹马，一生青梅</a></li>
+                                                    <li><span class="dash"></span><a href="#">烛光</a></li>
+                                                    <li><span class="dash"></span><a href="#">你，惊艳了我的天空</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="col-sm-4" style="float:left;">
+                                            <a href="#"><img src="img/hot4.jpg"></a>
+                                            <h5><a href="#">珍惜</a></h5>
+                                        </div>
+                                        <div class="col-sm-4" style="float:left;">
+                                            <a href="#"><img src="img/hot10.jpg"></a>
+                                            <h5><a href="#">祭奠，我们的过...</a></h5>
+                                        </div>
+                                        <div class="col-sm-4" style="float:left;">
+                                            <a href="#"><img src="img/hot11.jpg"></a>
+                                            <h5><a href="#">夜里繁星</a></h5>
+                                        </div>
+                                        <div class="col-sm-4" style="float:left;">
+                                            <a href="#"><img src="img/hot12.jpg"></a>
+                                            <h5><a href="#">那一幕年华...</a></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:20px">
+                    <div class="col-lg-12">
+                        <ul class="page-user">
+                            <li>
+                                <a href="#">
+                                    <img src="img/tip1.jpg" alt="">
+                                    <h5>清晰文学社</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="img/tip2.jpg" alt="">
+                                    <h5>儒墨文学社</h5>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                        
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+<!--end content -->
+<!-- begin footer -->
+    <div class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <h2>歆墨文学网</h2>
+                    <p>歆墨文学网是一个文学创作与交流的平台，以文会友，创建一片纯净不沾利益的文学天地。</p>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <h2>全站搜索</h2>
+                    <div class="search" style="margin-bottom:20px;">
+                        <form class="search-form" action="" method="get">
+                            <div class="input-group">
+                              <input type="text" class="form-control" placeholder="输入搜索关键字">
+                              <span class="input-group-btn">
+                                <button class="btn btn-info" type="button">搜索</button>
+                            </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <h2>分享我们</h2>
+                    <div class="social-icons" style="padding-top: 9px;">
+                        <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+                        <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"24"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <h2>联系我们</h2>
+                    <address>
+                        电话：1506712340 <br>
+                        邮箱：<a href="#">admin@163.com</a>    
+                    </address>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scroll-to-top" style="display: block;">
+   <a href="#top"><i class="fa fa-arrow-up"></i></a> 
+</div>
+<!-- end footer -->
+<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+ <script src="js/bootstrap.js"></script>
+ </body>
+</html>

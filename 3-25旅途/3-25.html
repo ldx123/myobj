@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .f1{
+            background: url();
+            height:671px;
+            min-height: 1000px;
+        }
+        .block{
+            width:990px;
+            padding: 20px 0 20px 18px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .f1-font{
+            width: 647px;
+            height: 287px;
+            position: absolute;
+            top: 165px;
+            left: 50%;
+            margin-left: -300px;
+            z-index: 20px;
+            animation:fontIn 5s ease infinite;
+        }
+         @keyframes fontIn{
+            0%{opacity: 0;transform:scale(.3);}
+            50%{opacity: 1;transform:scale(1.05);}
+            50%{transform:scale(.9);}
+            100%{transform:scale(1);}
+        }
+        .f1-yun1{
+            position: absolute;
+            top: 60px;left: 255px;
+            animation:yun1 5s linear infinite;
+        }
+        @keyframes yun1{
+            0%{left: 235px;}
+            50%{left: 285px;}
+            100%{left: 235px;}
+        }
+        .f1-yun2{
+            position: absolute;
+            top: 135px;
+            right: 0;
+            animation:yun2 5s linear infinite;
+        }
+        @keyframes yun2{
+            0%{right: 0px;}
+            50%{right: 35px;}
+            100%{right: 0px;}
+        }
+        .f1-yun3{
+            position: absolute;
+            top: 180px;
+            left: -70px;
+            animation:yun3 5s linear infinite;
+        }
+        @keyframes yun3{
+            0%{left:-70px;top: 160px; }
+            50%{left: -40px;top: 180px;}
+            100%{left: -70px;top: 160px;}
+        }
+        .f1-lu{
+            position: absolute;
+            top: 100px;
+            right: 125px;
+            z-index: 10px;
+            animation:load 2s linear 3s infinite;
+            transform-origin:0 200px; 
+        }
+        @keyframes load{
+            20%{transform:rotate(5deg); }
+            30%{transform:rotate(0deg);}
+            100%{transform:rotate(.2deg);}
+        }
+        .f1-sap{
+            position: absolute;
+            top: 100px;
+            left: 125px;
+            z-index: 10px;
+            animation:sap 2s linear 3s infinite;
+            transform-origin:0 200px; 
+        }
+        @keyframes sap{
+            0%{top: 120px;}
+            50%{top: 100px;}
+            100%{top: 120px;}
+        }
+        .f1-show{
+            position: absolute;
+            top: 290px;
+            z-index: 50px;
+            animation:show1 1s linear infinite;
+        }
+        .f1-tejia{
+            position: absolute;
+            top: 160px;
+            margin-left:  76px;
+            animation:show1 1.2s linear infinite;
+        }
+        .f1-app{
+            position: absolute;
+            top: 160px;
+            margin-left:  296px;
+            animation:show1 1s linear infinite;
+        }
+        .f1-baokuan{
+            position: absolute;
+            top: 160px;
+            margin-left:  520px;
+            animation:show1 .8s linear infinite;
+        }
+        .f1-fengjia{
+            position: absolute;
+            top: 160px;
+            margin-left:  740px;
+            animation:show1 1.5s linear infinite;
+        }
+        @keyframes show1{
+            0%{margin-top: 0px;}
+            50%{margin-top: -10px;}
+            100%{margin-top: 0px;}
+        }
+    </style>
+</head>
+<body>
+    <div class="f1">
+        <div class="block">
+            <img src="banner1.png" alt="" class="f1-font">
+            <img src="banner2.png" class="f1-yun1" alt="">
+            <img src="banner3.png" class="f1-yun2" alt="">
+            <img src="banner4.png" class="f1-yun3" alt="">
+            <img src="banner5.png" alt="" class="f1-lu">
+            <img src="banner1.png" alt="" class="f1-sap">
+            <div class="f1-show">
+                <img src="banner1.png" alt="" class="f1-tejia" >
+                <img src="banner2.png" alt="" class="f1-app" >
+                <img src="banner3.png" alt="" class="f1-baokuan" >
+                <img src="banner4.png" alt="" class="f1-fengjia" >
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

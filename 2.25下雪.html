@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    *{margin:0;}
+     #canvas{background-color: #000;}
+    }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="1600" height="809"></canvas>
+    <audio src="music.mp3" ></audio>
+    <script>
+        window.onload=function(){
+            var canvas=document.getElementById('canvas');
+            var cxt=canvas.getContext('2d');
+
+            var W=window.innerWidth;
+            var H=window.innerHeight;
+
+            var str="我是2b我是个大笨蛋";
+            var fontSize=14;
+
+            var columns=Math.floor(W/fontSize);
+
+            var drop = [];
+                for(var x=0;x<columns;x++)
+                {
+                    drop[x]=0;
+                }
+            function draw(){
+                cxt.fillStyle="rgba(0,0,0,0.07)";
+                cxt.fillRect(0,0,W,H);
+                cxt.fillStyle=randColor();
+                cxt.font=fontSize+"px 微软雅黑";
+                cxt.font = "700 "+fontSize+"px  微软雅黑";
+                for(var i=0;i<columns;i++){
+                    var index = Math.floor(Math.random() * str.length);
+                    var x = i*fontSize;
+                    var y = drop[i] *fontSize;
+                    cxt.fillText(str[index],x,y);
+                    //如果要改变时间，肯定就是改变每次他的起点
+                    if(y >= H && Math.random() > 0.9){
+                        drop[i] = 0;
+                    }
+                    drop[i]++;
+                }
+            }
+            function randColor(){
+                var r = Math.floor(Math.random() * 256);
+                var g = Math.floor(Math.random() * 256);
+                var b = Math.floor(Math.random() * 256);
+                return "rgb("+r+","+g+","+b+")";
+            }
+            setInterval(draw,100);
+        }
+    </script>
+</body>
+</html>

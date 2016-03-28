@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片轮播</title>
+<style>
+*{
+	padding: 0;
+	margin: 0;
+}
+li{
+	list-style-type: none;
+}
+body{
+	margin: 50px;
+}
+
+.wrap{
+	width: 500px;
+	height: 350px;
+	border: 3px solid #f00;
+	position:relative;
+	overflow: hidden;
+}
+
+.wrap .img{
+	width: 2500px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.wrap .introduce{
+	width: 2500px;
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+}
+.wrap ul li{
+	float: left;
+	width: 500px;
+	background-color: blue;
+}
+
+.wrap ol{
+	position: absolute;
+	bottom: 40px;
+	right: 10px;
+}
+
+.wrap ol li{
+	/*float: left;*/
+	width: 16px;
+	height: 16px;
+	line-height: 16px;
+	text-align: center;
+	border: 1px solid #fc0;
+	background: #000;
+	color: #fff;
+	margin-right: 3px;
+	cursor: pointer;
+}
+
+.wrap ol li.current{
+	background: #fff;
+	color: #000;
+}
+
+.wrap .introduce li{
+	height: 30px;
+	line-height: 30px;
+	width: 500px;
+	background: rgba(0,0,0,0.5);
+	color: #fff;
+	float: left;
+	/*opacity: 0.5;
+	filter:alpha(opacity=50); */
+}
+
+
+
+</style>
+	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script>
+	$(function(){
+		var iNow=0;
+		$('ol li').click(function(){
+			var index=$(this).index();
+			iNow=index;
+			$(this).addClass('current').siblings().removeClass('current');
+			$('.img').animate({'left':-500*index})
+			$('.introduce ').animate({'left':-500*index})
+		});
+
+		setInterval(function(){
+			if(iNow==4){iNow=0;}else{iNow++;}
+			$('ol li').eq(iNow).addClass('current').siblings().removeClass('current');
+			$('.img').animate({'left':-500*iNow},500)
+			$('.introduce ').animate({'left':-500*iNow},500)
+		},2000)
+	});
+	</script>
+	
+</head>
+<body>
+	<div class="wrap">
+		<ul class="img">
+			<li>a</li>
+			<li>b</li>
+			<li>c</li>
+			<li>d</li>
+			<li>e</li>
+		</ul>
+		<ol>
+			<li class="current">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ol>
+		<ul class="introduce">
+			<li >111</li>
+			<li >222</li>
+			<li >333</li>
+			<li >444</li>
+			<li >555</li>
+		</ul>
+	</div>
+
+</body>
+</html>

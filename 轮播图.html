@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title轮播图</title>
+    <style>
+    *{margin:0;padding:0;}
+    li{list-style:none;}
+    #box{width:160px;height:40px;margin:0 auto;overflow:hidden;position:relative;}
+    ul{height:40px;width:320px;position:absolute;top:0;left:0;}
+    li{background:green;float:left;height:40px;width:40px;}
+    span{height:40px;line-height:40px;text-align:center;background:red;position:absolute;}
+    span.right{position:absolute; left:152px;top:0;z-index: 9;}span.left{position:absolute;left:0px;top:0;z-index: 9;}
+    </style>
+    <!-- <script>
+        var p=function(){alert('111');}
+        function p(){alert('222');}
+        p();
+    </script> -->
+</head>
+<body>
+    <div id="box">
+    <span class="left">&lt</span>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <span class="right">&gt</span>    
+</div>
+</body>
+ <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+ <script>
+$(function(){
+    $('ul').append($('ul').html());
+    $('ul').width($('li').width()*$('li').size());
+    var box=$('li').width()*$('li').size();
+    var speed=-2;
+
+    var move=function(){
+        if(speed<0){
+            if($('ul').css('left')==-box/2+'px'){$('ul').css('left','0');}
+        }else if(speed>0){
+            if($('ul').css('left')=='0px'){$('ul').css('left',-box/2+'px');}
+        }
+        $('ul').css('left','+='+speed+'px');
+    }
+    
+    //自动轮播
+    var timer=null;
+    timer=setInterval(move,100);
+    // 鼠标经过停止，移出滚动
+    $('#box').hover(function(){
+    clearInterval(timer);
+    },function(){
+    timer=setInterval(move,100);
+    })
+    // 向左移动
+    $('.left').click(function(){
+    speed = -Math.abs(speed);
+    })
+    // 向右移动
+    $('.right').click(function(){
+    speed = Math.abs(speed);
+    })
+})
+</script>
+</html>
